@@ -116,7 +116,14 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@utility container {
+  @media (width >= 96rem /* 1536px */) {
+    max-width: 83rem /* 1440px */;
   }
 }
