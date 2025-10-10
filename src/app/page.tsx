@@ -10,6 +10,15 @@ export default function Home() {
         </header>
         <section className="px-6 sm:px-10 md:px-20 lg:px-36 border-x">
           <div className="border-x p-12">
+            <div>
+              <h2 className="text-4xl font-semibold text-primary">
+                Heading track 2
+              </h2>
+              <p className="text-muted-foreground">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
+                sunt!
+              </p>
+            </div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Voluptatibus odio ullam rem aliquid sunt recusandae. Quisquam
             mollitia sunt, ex illo quibusdam vitae vel maiores neque ad,

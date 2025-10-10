@@ -29,9 +29,9 @@ export function Navbar() {
         {!collapsed ? (
           <>
             <div className="flex items-center gap-2">
-              <Avatar className="rounded-md size-20">
-                <AvatarImage src="/profile.jpg" className="rounded-md" />
-                <AvatarFallback className="rounded-md">ID</AvatarFallback>
+              <Avatar className="rounded-xl size-20">
+                <AvatarImage src="/profile.jpg" className="rounded-xl" />
+                <AvatarFallback className="rounded-xl">ID</AvatarFallback>
               </Avatar>
               <div className="hidden sm:flex flex-col gap-1">
                 <p>Iheb Daly</p>
