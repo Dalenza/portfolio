@@ -80,6 +80,7 @@
 .dark {
   /* Base backgrounds */
   --background: oklch(0.2972 0 0);
+  --background-darker: oklch(0.2572 0 0);
   --foreground: oklch(0.9388 0.0154 48.5546);
 
   --card: oklch(0.3485 0 0);
@@ -156,6 +157,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-darker: var(--background-darker);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -243,7 +245,7 @@
 }
 
 @utility text-h2 {
-  @apply scroll-m-20 border-b pb-2 text-4xl font-semibold tracking-tight first:mt-0 font-sans;
+  @apply scroll-m-20 text-4xl font-semibold tracking-tight first:mt-0 font-sans;
 }
 
 @utility text-h3 {
