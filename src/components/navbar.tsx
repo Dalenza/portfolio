@@ -29,15 +29,15 @@ export function Navbar() {
         {!collapsed ? (
           <>
             <div className="flex items-center gap-2">
-              <Avatar className="rounded-xl size-20">
+              <Avatar className="rounded-xl size-14">
                 <AvatarImage src="/profile.jpg" className="rounded-xl" />
                 <AvatarFallback className="rounded-xl">ID</AvatarFallback>
               </Avatar>
               <div className="hidden sm:flex flex-col gap-1">
-                <p>Iheb Daly</p>
+                <p className="text-sm">Iheb Daly</p>
                 <div className="flex items-center gap-1">
                   <span className="size-2 bg-green-400 rounded-full" />
-                  <p>Available for work</p>
+                  <p className="text-sm text-secondary">Available for work</p>
                 </div>
               </div>
             </div>

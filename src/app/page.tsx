@@ -11,10 +11,12 @@ export default function Home() {
         <section className="px-6 sm:px-10 md:px-20 lg:px-36 border-x">
           <div className="border-x p-12">
             <div>
-              <h2 className="text-4xl font-semibold text-primary">
-                Heading track 2
-              </h2>
-              <p className="text-muted-foreground">
+              <h1 className="text-primary text-h1">Heading 1</h1>
+              <h2 className="text-h2">Heading 2</h2>
+              <h3 className="text-h3">Heading 3</h3>
+              <h4 className="text-h4">Heading 4</h4>
+              <p className="text-lead">Lorem ipsum dolor sit amet. Lead text</p>
+              <p className="text-p">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
                 sunt!
               </p>
