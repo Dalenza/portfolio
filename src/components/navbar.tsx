@@ -7,6 +7,7 @@ import {
   HomeIcon,
   MenuIcon,
   PhoneIcon,
+  UniversityIcon,
   XIcon,
 } from "lucide-react";
 import Link from "next/link";
@@ -20,12 +21,13 @@ import {
   NavigationMenuList,
 } from "./ui/navigation-menu";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import { Socials } from "./socials";
 
 export function Navbar() {
   const [collapsed, setCollapsed] = useState(false);
   return (
-    <div className="flex flex-col gap-2 border-x px-6 sm:px-9 md:px-12 py-3 bg-background/75 backdrop-blur-xs">
-      <div className="flex items-center h-[80px]">
+    <div className="flex flex-col gap-2 border-x px-6 sm:px-9 md:px-12 py-3 bg-background">
+      <div className="flex items-center justify-between h-[80px]">
         {!collapsed ? (
           <>
             <div className="flex items-center gap-2">
@@ -41,7 +43,10 @@ export function Navbar() {
                 </div>
               </div>
             </div>
-            <div className="hidden sm:block ml-auto">
+            <div className="hidden sm:block">
+              <Socials />
+            </div>
+            <div className="hidden sm:block">
               <Navigation />
             </div>
             <div className="sm:hidden ml-auto">
@@ -68,17 +73,22 @@ export function Navbar() {
       </div>
       {collapsed && (
         <div className="space-y-3">
-          <div className="flex items-center gap-2">
-            <Avatar className="rounded-md size-10">
-              <AvatarImage src="/profile.jpg" className="rounded-md" />
-              <AvatarFallback className="rounded-md">ID</AvatarFallback>
-            </Avatar>
-            <div className="flex flex-col gap-1">
-              <p>Iheb Daly</p>
-              <div className="flex items-center gap-1">
-                <span className="size-2 bg-green-400 rounded-full" />
-                <p>Available for work</p>
+          <div className="flex items-center">
+            <div className="flex items-center gap-2">
+              <Avatar className="rounded-md size-10">
+                <AvatarImage src="/profile.jpg" className="rounded-md" />
+                <AvatarFallback className="rounded-md">ID</AvatarFallback>
+              </Avatar>
+              <div className="flex flex-col gap-1">
+                <p>Iheb Daly</p>
+                <div className="flex items-center gap-1">
+                  <span className="size-2 bg-green-400 rounded-full" />
+                  <p>Available for work</p>
+                </div>
               </div>
+            </div>
+            <div className="ml-auto">
+              <Socials />
             </div>
           </div>
           <CollapsedNav />
@@ -90,17 +100,14 @@ export function Navbar() {
 
 function Navigation({ className }: { className?: string }) {
   return (
-    <NavigationMenu className={cn(className)}>
+    <NavigationMenu className={cn("border-2", className)}>
       <NavigationMenuList>
         <Tooltip>
           <TooltipTrigger>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link
-                  href="#home"
-                  className="w-10 flex justify-center items-center"
-                >
-                  <HomeIcon className="size-6" />
+                <Link href="#home" className="flex justify-center items-center">
+                  <HomeIcon />
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -115,9 +122,9 @@ function Navigation({ className }: { className?: string }) {
               <NavigationMenuLink asChild>
                 <Link
                   href="#experience"
-                  className="w-10 flex justify-center items-center"
+                  className="flex justify-center items-center"
                 >
-                  <BriefcaseBusinessIcon className="size-6" />
+                  <BriefcaseBusinessIcon />
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -127,37 +134,37 @@ function Navigation({ className }: { className?: string }) {
           </TooltipContent>
         </Tooltip>
         <Tooltip>
+          <TooltipTrigger>
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild>
+                <Link
+                  href="#education"
+                  className="flex justify-center items-center"
+                >
+                  <UniversityIcon />
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Education</p>
+          </TooltipContent>
+        </Tooltip>
+        <Tooltip>
           <NavigationMenuItem>
             <TooltipTrigger>
               <NavigationMenuLink asChild>
                 <Link
                   href="#projects"
-                  className="w-10 flex justify-center items-center"
+                  className="flex justify-center items-center"
                 >
-                  <FolderOpenIcon className="size-6" />
+                  <FolderOpenIcon />
                 </Link>
               </NavigationMenuLink>
             </TooltipTrigger>
           </NavigationMenuItem>
           <TooltipContent>
             <p>Projects</p>
-          </TooltipContent>
-        </Tooltip>
-        <Tooltip>
-          <TooltipTrigger>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
-                  href="#contact"
-                  className="w-10 flex justify-center items-center"
-                >
-                  <PhoneIcon className="size-6" />
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Contact</p>
           </TooltipContent>
         </Tooltip>
       </NavigationMenuList>
@@ -171,7 +178,7 @@ function CollapsedNav() {
       <ul>
         <li className="border">
           <Button variant="ghost" asChild className="w-full justify-start">
-            <Link href="#">
+            <Link href="#home">
               <HomeIcon />
               Home
             </Link>
@@ -179,7 +186,7 @@ function CollapsedNav() {
         </li>
         <li className="border">
           <Button variant="ghost" asChild className="w-full justify-start">
-            <Link href="#">
+            <Link href="#experience">
               <BriefcaseBusinessIcon />
               Experience
             </Link>
@@ -187,17 +194,17 @@ function CollapsedNav() {
         </li>
         <li className="border">
           <Button variant="ghost" asChild className="w-full justify-start">
-            <Link href="#">
-              <FolderOpenIcon />
-              Projects
+            <Link href="#education">
+              <UniversityIcon />
+              Education
             </Link>
           </Button>
         </li>
         <li className="border">
           <Button variant="ghost" asChild className="w-full justify-start">
-            <Link href="#">
-              <PhoneIcon />
-              Contact
+            <Link href="#projects">
+              <FolderOpenIcon />
+              Projects
             </Link>
           </Button>
         </li>

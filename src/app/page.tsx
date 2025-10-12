@@ -1,3 +1,4 @@
+import { Education } from "@/components/education";
 import { Navbar } from "@/components/navbar";
 import { Projects } from "@/components/projects";
 import { Badge } from "@/components/ui/badge";
@@ -8,7 +9,7 @@ export default function Home() {
   return (
     <div className="container mx-auto border min-h-svh">
       <main>
-        <header className="px-6 sm:px-10 md:px-20 lg:px-36 sticky top-0 z-10 w-full border">
+        <header className="px-6 sm:px-10 md:px-20 lg:px-36 sticky bg-background top-0 z-10 w-full border">
           <Navbar />
         </header>
         <section id="home" className="px-6 sm:px-10 md:px-20 lg:px-36 border">
@@ -52,10 +53,13 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="px-6 sm:px-10 md:px-20 lg:px-36 border">
+        <section
+          id="education"
+          className="px-6 sm:px-10 md:px-20 lg:px-36 border"
+        >
           <div className="border-x p-12 bg-background-darker">
             <h2 className="text-h2 mb-6">Education</h2>
-            your education background
+            <Education />
           </div>
         </section>
         <section
@@ -65,14 +69,6 @@ export default function Home() {
           <div className="border-x p-12">
             <h2 className="text-h2 mb-6">Projects</h2>
             <Projects />
-          </div>
-        </section>
-        <section
-          id="contact"
-          className="px-6 sm:px-10 md:px-20 lg:px-36 border"
-        >
-          <div className="border-x p-12">
-            <h2 className="text-h2 mb-6">Contact</h2>
           </div>
         </section>
       </main>
