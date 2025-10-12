@@ -4,6 +4,8 @@ import { Projects } from "@/components/projects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { WorkExperience } from "@/components/work-experience";
+import { DATA } from "@/data/data";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -16,14 +18,12 @@ export default function Home() {
           <div className="border-x p-12">
             <div className="flex flex-col gap-4">
               <p className="text-sm">👋 Hi, I am a</p>
-              <h1 className="text-h1">Fullstack Nextjs developer</h1>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
-                aperiam earum sapiente, unde animi quo officiis incidunt
-                temporibus tempore distinctio!
-              </p>
+              <h1 className="text-h1">{DATA.profile.position}</h1>
+              <p>{DATA.profile.description}</p>
             </div>
-            <Button className="mt-6">Hire me</Button>
+            <Button className="mt-6" asChild>
+              <Link href="https://x.com/dalenza_">Hire me</Link>
+            </Button>
           </div>
         </section>
         <section
@@ -42,14 +42,19 @@ export default function Home() {
           <div className="border-x p-12">
             <h2 className="text-h2 mb-6">Skills</h2>
             <div className="flex gap-2 items-center flex-wrap max-w-3xl">
-              <Badge variant="secondary">Nodejs</Badge>
-              <Badge>React</Badge>
-              <Badge>Nextjs</Badge>
-              <Badge>Tailwindcss</Badge>
-              <Badge>Postgresql</Badge>
-              <Badge>Prisma</Badge>
-              <Badge>Typescript</Badge>
-              <Badge>Docker</Badge>
+              {DATA.skills.frontend.map((fs) => (
+                <Badge key={fs} variant="secondary">
+                  {fs}
+                </Badge>
+              ))}
+              {DATA.skills.backend.map((bs) => (
+                <Badge key={bs}>{bs}</Badge>
+              ))}
+              {DATA.skills.devops.map((ds) => (
+                <Badge key={ds} variant="outline">
+                  {ds}
+                </Badge>
+              ))}
             </div>
           </div>
         </section>

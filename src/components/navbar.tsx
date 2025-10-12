@@ -101,7 +101,7 @@ export function Navbar() {
 function Navigation({ className }: { className?: string }) {
   return (
     <NavigationMenu className={cn("border-2", className)}>
-      <NavigationMenuList>
+      <NavigationMenuList className="gap-0">
         <Tooltip>
           <TooltipTrigger>
             <NavigationMenuItem>
