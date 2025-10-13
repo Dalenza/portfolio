@@ -19,7 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${soraFont.variable} font-sans`}>{children}</body>
+      <body
+        className={`${soraFont.variable} font-sans [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-primary-foreground [&::-webkit-scrollbar-thumb]:bg-primary [&::-webkit-scrollbar-thumb]:hover:bg-primary/80 `}
+      >
+        {children}
+      </body>
     </html>
   );
 }
