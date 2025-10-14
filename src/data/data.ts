@@ -122,7 +122,7 @@ export const DATA = {
       links: [
         {
           label: "Source",
-          href: "https://github.com/dalenza",
+          href: "https://github.com/Dalenza/carte-grc2",
           icon: GithubIcon,
         },
         {
@@ -141,7 +141,7 @@ export const DATA = {
       links: [
         {
           label: "Source",
-          href: "https://github.com/dalenza",
+          href: "https://github.com/Dalenza/food-order-app",
           icon: GithubIcon,
         },
       ],
