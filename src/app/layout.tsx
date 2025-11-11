@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Final-year Cybersecurity student specializing in full-stack development. I love building apps with Next.js and solving real problems through code. Always learning, always shipping.",
   other: {
-    "google-site-verfication": "sUQWQMmmQAGABWwf2mTl45KcoA9fL5L08j392e90Qwk",
+    "google-site-verification": "sUQWQMmmQAGABWwf2mTl45KcoA9fL5L08j392e90Qwk",
   },
 };
 
