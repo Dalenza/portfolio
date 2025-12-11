@@ -2,16 +2,15 @@
 import { cn } from "@/lib/utils";
 import {
   BriefcaseBusinessIcon,
-  Divide,
   FolderOpenIcon,
   HomeIcon,
   MenuIcon,
-  PhoneIcon,
   UniversityIcon,
   XIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { Socials } from "./socials";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 import {
@@ -21,7 +20,7 @@ import {
   NavigationMenuList,
 } from "./ui/navigation-menu";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import { Socials } from "./socials";
+import { DATA } from "../data/data";
 
 export function Navbar() {
   const [collapsed, setCollapsed] = useState(false);
@@ -32,11 +31,14 @@ export function Navbar() {
           <>
             <div className="flex items-center gap-2">
               <Avatar className="rounded-xl size-14">
-                <AvatarImage src="/profile.png" className="rounded-xl" />
-                <AvatarFallback className="rounded-xl">ID</AvatarFallback>
+                <AvatarImage
+                  src={DATA.profile.avatarUrl}
+                  className="rounded-xl"
+                />
+                <AvatarFallback className="rounded-xl">DZ</AvatarFallback>
               </Avatar>
               <div className="hidden sm:flex flex-col gap-1">
-                <p className="text-sm">Iheb Daly</p>
+                <p className="text-sm">{DATA.profile.name}</p>
                 <div className="flex items-center gap-1">
                   <span className="size-2 bg-green-400 rounded-full" />
                   <p className="text-sm text-secondary">Available for work</p>
